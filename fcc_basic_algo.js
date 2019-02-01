@@ -72,4 +72,56 @@ largestNumbers([
   [1000, 1001, 857, 1]
 ]);
 
-//6 - 
+//6 - Check if a string ends with the given target string (no .endsWith())
+
+function confirmEnding(str, target) {
+    let targetlength = target.length
+    let strlength = str.length
+  
+    return str.substring(strlength - targetlength) === target ? true : false
+  }
+
+confirmEnding("dog", "g")
+confirmEnding("maple", "aple")
+
+//7 - Repeat a given str for n times, return empty if n is negative
+
+function repeatStringNumTimes(str, num) {
+    let final = ""
+    for (let i=0;i<num;i++){
+      final += str
+    }
+    return final
+  }
+
+//8 - Truncate a string (first argument) if it is longer than the given maximum string length (second argument). 
+// Return the truncated string with a ... ending.
+
+function truncateString(str, num) {
+    if(str.length <= num){
+    return str
+  } 
+  let substring = str.substring(num)
+  return str.replace(substring, "...")
+}
+
+//9 - Create a function that parses an array of nums (first arg) and returns the first element that passes
+// a condition (second arg), if no element passes, return undefined
+
+function findElement(arr, func) {
+    let newArr = arr.find(e=>{
+      return func(e)
+    })
+    return newArr
+  }
+
+//10 - Check if a value is a boolean primitive, return true or false
+
+function booWho(bool) {
+    return typeof bool === "boolean" ? true : false
+  }
+
+booWho(true) //true
+booWho(false) //true
+booWho("anything else") //false
+
